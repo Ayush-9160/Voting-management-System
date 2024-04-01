@@ -1,11 +1,12 @@
 # Online Voting 
 
-This is a Node.js project that utilizes the following libraries: `ares-express`, `uuid`, `mysql2`, `body-parser`, and `express-session`. It also requires MySQL Workbench for database management.
+This is a Node.js project that utilizes the following libraries: `express`, `uuid`, `mysql2`, `body-parser`, and `express-session`. It also requires MySQL Workbench for database management.
 
 ## Installation
 To install the necessary dependencies, run the following command:
-
+```bash
 npm install express uuid mysql2 body-parser express-session
+```
 
 install SQL workbench
 
@@ -15,11 +16,26 @@ create Database using
 
 ## Usage
 
-npm index.js
+1. Start the server: `npm start`
+2. Access the app in your web browser at `http://localhost:3000`
 
-## Result
+## Contributing
 
-[localhost](http://localhost:3030)
+Contributions are welcome! If you would like to contribute to WaterZilla, please follow these steps:
 
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Submit a pull request
+
+
+
+## Contact
+
+For any inquiries or feedback, please reach out to gajeraayush5@gmail.com 
+
+# Welcome to Your Online Voting Website
+
+Join us on Online Voting, where the online voting experience is redefined. Seamlessly cast your votes, track election results, and participate in shaping the future. Let's dive into the world and make a difference!
 
 
