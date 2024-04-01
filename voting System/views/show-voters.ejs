@@ -1,0 +1,21 @@
+<!-- views/show-voters.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Voters</title>
+</head>
+<body>
+    <h1>Option Voters</h1>
+    
+    <h2>Option ID: <%= option_id %></h2>
+    
+    <ul>
+        <% voters.forEach(voter => { %>
+            <li>Option ID: <%= option_id %> - Voter: <%= voter %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>

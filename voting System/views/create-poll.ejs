@@ -1,0 +1,144 @@
+<!-- views/create-poll.ejs
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Poll</title>
+</head>
+<body>
+    <h1>Create Poll</h1>
+    <p>Hello, <%= user.username %>! You are creating a poll.</p>
+    
+    <form action="/create-poll" method="POST">
+        <label for="question">Poll Question:</label>
+        <input type="text" id="question" name="question" required>
+        <br>
+        <label for="numOptions">Number of Options (Max 5):</label>
+        <input type="number" id="numOptions" name="numOptions" min="1" max="5" required>
+        <br>
+        <div id="optionsContainer">
+            Dynamic option fields will be added here
+        </div>
+        <button type="submit">Create Poll</button>
+    </form>
+    
+    <script>
+        document.getElementById('numOptions').addEventListener('input', function() {
+            const numOptions = parseInt(this.value);
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            for (let i = 1; i <= numOptions; i++) {
+                const label = document.createElement('label');
+                label.textContent = `Option ${i}: `;
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.name = `option${i}`;
+                input.required = true;
+                optionsContainer.appendChild(label);
+                optionsContainer.appendChild(input);
+                optionsContainer.appendChild(document.createElement('br'));
+            }
+        });
+    </script>
+</body>
+</html> -->
+<!-- views/create-poll.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Poll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Poll</h1>
+        <p>Hello, <%= user.username %>! You are creating a poll.</p>
+        
+        <form action="/create-poll" method="POST">
+            <label for="question">Poll Question:</label>
+            <input type="text" id="question" name="question" required>
+            <br>
+            <label for="numOptions">Number of Options (Max 5):</label>
+            <input type="number" id="numOptions" name="numOptions" min="1" max="5" required>
+            <br>
+            <div id="optionsContainer">
+                <!-- Dynamic option fields will be added here -->
+            </div>
+            <button type="submit">Create Poll</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('numOptions').addEventListener('input', function() {
+            const numOptions = parseInt(this.value);
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            for (let i = 1; i <= numOptions; i++) {
+                const label = document.createElement('label');
+                label.textContent = `Option ${i}: `;
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.name = `option${i}`;
+                input.required = true;
+                optionsContainer.appendChild(label);
+                optionsContainer.appendChild(input);
+                optionsContainer.appendChild(document.createElement('br'));
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+<!-- views/voting-events.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        hr {
+            margin-top: 20px;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Voting Events</h1>
+        
+        <% questions.forEach(question => { %>
+            <h2><%= question.question %></h2>
+            <form action="/vote" method="POST">
+                <input type="hidden" name="poll_id" value="<%= question.poll_id %>">
+                <input type="hidden" name="id" value="<%= user.id %>">
+                <% question.options.forEach(option => { %>
+                    <label>
+                        <input type="radio" name="option_id" value="<%= option.option_id %>">
+                        <%= option.option_text %>
+                    </label>
+                    <br>
+                <% }) %>
+                <button type="submit">Vote</button>
+            </form>
+            <hr>
+        <% }) %>
+    </div>
+</body>
+</html>
