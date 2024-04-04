@@ -21,7 +21,7 @@ create Database using
 
 ## Contributing
 
-Contributions are welcome! If you would like to contribute to WaterZilla, please follow these steps:
+Contributions are welcome! If you would like to contribute to Online Voting System , please follow these steps:
 
 1. Fork the repository
 2. Create a new branch
